@@ -37,6 +37,7 @@ class SamokatPage(BasePage):
     # Получаем текст ответа на вопрос по индексу
     def get_text_of_answer_by_index(self, index):
         questions = self.get_questions()
+        # Проверяем, не пустой ли список. А также, что индекс меньше длинны списка.
         if questions and index < len(questions):
             answers = self.get_answers(questions[index])
             if answers:
