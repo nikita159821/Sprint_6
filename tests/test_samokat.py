@@ -1,5 +1,3 @@
-import time
-
 from pages.yandex_samokat_page import SamokatPage
 from tests.data import answer_text_1, answer_text_2, answer_text_3, answer_text_4, answer_text_5, answer_text_6, \
     answer_text_7, answer_text_8
@@ -11,7 +9,7 @@ class TestBurgerLogin:
         samokat.open()
         samokat.button()
         samokat.click_question_by_index(0)  # Кликаем на первый вопрос
-        time.sleep(2)
+        samokat.time()
         answer_1 = samokat.get_text_of_answer_by_index(0)  # Получаем текст ответа на первый вопрос
         assert answer_1 == answer_text_1
 
@@ -20,7 +18,7 @@ class TestBurgerLogin:
         samokat.open()
         samokat.button()
         samokat.click_question_by_index(1)
-        time.sleep(2)
+        samokat.time()
         answer_2 = samokat.get_text_of_answer_by_index(1)
         assert answer_2 == answer_text_2
 
@@ -29,7 +27,7 @@ class TestBurgerLogin:
         samokat.open()
         samokat.button()
         samokat.click_question_by_index(2)
-        time.sleep(2)
+        samokat.time()
         answer_3 = samokat.get_text_of_answer_by_index(2)
         assert answer_3 == answer_text_3
 
@@ -38,7 +36,7 @@ class TestBurgerLogin:
         samokat.open()
         samokat.button()
         samokat.click_question_by_index(3)
-        time.sleep(2)
+        samokat.time()
         answer_4 = samokat.get_text_of_answer_by_index(3)
         assert answer_4 == answer_text_4
 
@@ -47,7 +45,7 @@ class TestBurgerLogin:
         samokat.open()
         samokat.button()
         samokat.click_question_by_index(4)
-        time.sleep(2)
+        samokat.time()
         answer_5 = samokat.get_text_of_answer_by_index(4)
         assert answer_5 == answer_text_5
 
@@ -56,7 +54,7 @@ class TestBurgerLogin:
         samokat.open()
         samokat.button()
         samokat.click_question_by_index(5)
-        time.sleep(2)
+        samokat.time()
         answer_6 = samokat.get_text_of_answer_by_index(5)
         assert answer_6 == answer_text_6
 
@@ -65,7 +63,7 @@ class TestBurgerLogin:
         samokat.open()
         samokat.button()
         samokat.click_question_by_index(6)
-        time.sleep(2)
+        samokat.time()
         answer_7 = samokat.get_text_of_answer_by_index(6)
         assert answer_7 == answer_text_7
 
@@ -74,6 +72,6 @@ class TestBurgerLogin:
         samokat.open()
         samokat.button()
         samokat.click_question_by_index(7)
-        time.sleep(2)
+        samokat.time()
         answer_8 = samokat.get_text_of_answer_by_index(7)
         assert answer_8 == answer_text_8
