@@ -3,6 +3,7 @@ import pytest
 import sys
 import os
 
+from pages.order_page import OrderPage
 from pages.yandex_samokat_page import SamokatPage
 
 # Добавляем путь к директории "pages"
@@ -23,3 +24,10 @@ def samokat(browser):
     samokat_page.open()
     samokat_page.button_cookie()
     return samokat_page
+
+@pytest.fixture
+def order_page(browser):
+    page = OrderPage(browser)
+    page.open()
+    page.button_cookie()
+    return page
