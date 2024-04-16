@@ -19,7 +19,7 @@ class SamokatPage(BasePage):
         self.browser.get(URL)
 
     # Принимаем куки
-    def button(self):
+    def button_cookie(self):
         self.browser.find_element(*self.cookie).click()
 
     # Получаем список вопросов
