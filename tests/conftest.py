@@ -25,6 +25,7 @@ def samokat(browser):
     samokat_page.button_cookie()
     return samokat_page
 
+
 @pytest.fixture
 def order_page(browser):
     page = OrderPage(browser)
