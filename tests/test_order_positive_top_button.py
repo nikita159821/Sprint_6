@@ -1,6 +1,3 @@
-import time
-
-
 class TestOrder:
 
     def test_order_positive_top_button(self, order_page):
