@@ -117,4 +117,3 @@ class OrderPage(BasePage):
         self.color_order_click()
         self.button_click()
         self.button_yes_order_click()
-        time.sleep(20)
