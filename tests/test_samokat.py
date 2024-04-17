@@ -2,7 +2,7 @@ from tests.data import answer_text_1, answer_text_2, answer_text_3, answer_text_
     answer_text_7, answer_text_8
 
 
-class TestBurgerLogin:
+class TestSamokat:
 
     def test_question_1_open_answer(self, samokat):
         samokat.click_question_by_index(0)
