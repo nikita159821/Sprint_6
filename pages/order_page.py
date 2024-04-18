@@ -89,7 +89,7 @@ class OrderPage(BasePage):
         self.browser.find_element(*logo).click()
 
     # Метод нажимает  на лого "Яндекс"
-    def logo_dzen_click(self):
+    def logo_yandex_click(self):
         self.browser.find_element(*logo_dzen).click()
 
     # Метод объединяет остальные в шаг
