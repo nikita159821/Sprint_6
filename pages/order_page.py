@@ -2,7 +2,7 @@ from pages.base_page import BasePage
 from tests.urls import URL
 from locators.order_page_locators import cookie, button_order, name_order, lastname_order, address_order, \
     metro_station_order, station, telephone_order, next_button_order, delivery_order, close_calendar_order, \
-    period_order, day_order, color_order, button, button_yes_order, order_is_processed
+    period_order, day_order, color_order, button, button_yes_order, order_is_processed, bottom_button
 
 
 class OrderPage(BasePage):
@@ -19,8 +19,12 @@ class OrderPage(BasePage):
         self.browser.find_element(*cookie).click()
 
     # Нажимаем кнопку "Заказать" в шапке
-    def order_button(self):
+    def order_button_click(self):
         self.browser.find_element(*button_order).click()
+
+    # Нажимаем кнопку "Заказать" внизу страницы
+    def order_bottom_button_click(self):
+        self.browser.find_element(*bottom_button).click()
 
     # Вводим имя
     def name_order_send(self, name_text):

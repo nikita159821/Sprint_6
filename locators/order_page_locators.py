@@ -17,3 +17,4 @@ button = (By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM'
 close_calendar_order = (By.XPATH, "//div[@class='App_App__15LM-']")
 button_yes_order = (By.XPATH, "//button[text()='Да']")
 order_is_processed = (By.XPATH, "//div[@class='Order_Text__2broi']")
+bottom_button = (By.XPATH, "//button[@class='Button_Button__ra12g Button_UltraBig__UU3Lp']")
