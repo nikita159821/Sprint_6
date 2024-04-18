@@ -1,5 +1,4 @@
 from pages.base_page import BasePage
-
 from tests.urls import URL
 from locators.order_page_locators import cookie, button_order, name_order, lastname_order, address_order, \
     metro_station_order, station, telephone_order, next_button_order, delivery_order, close_calendar_order, \

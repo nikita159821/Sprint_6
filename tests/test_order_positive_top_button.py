@@ -1,5 +1,4 @@
 import pytest
-
 from tests.data import order_data
 from tests.urls import URL, URL_DZEN
 
