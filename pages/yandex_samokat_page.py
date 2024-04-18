@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+
 from pages.base_page import BasePage
 from tests.urls import URL
 
@@ -10,6 +11,8 @@ class SamokatPage(BasePage):
     cookie = (By.ID, 'rcc-confirm-button')
     question = (By.CLASS_NAME, 'accordion__item')
     answer = (By.CSS_SELECTOR, '.accordion__panel p')
+    logo = (By.CLASS_NAME, 'Header_LogoScooter__3lsAR')
+    logo_dzen = (By.CLASS_NAME, 'Header_LogoYandex__3TSOI')
 
     def __init__(self, browser):
         super().__init__(browser)
@@ -46,5 +49,12 @@ class SamokatPage(BasePage):
             if answers:
                 return answers[0].text
 
+        # Метод нажимает  на лого "Самокат"
+    def logo_click(self):
+            self.browser.find_element(*self.logo).click()
+
+        # Метод нажимает  на лого "Яндекс"
+    def logo_yandex_click(self):
+            self.browser.find_element(*self.logo_dzen).click()
     def time(self):
         return WebDriverWait(self.browser, 30).until(expected_conditions.visibility_of_element_located(self.question))

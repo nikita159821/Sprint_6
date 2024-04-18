@@ -17,5 +17,3 @@ button = (By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM'
 close_calendar_order = (By.XPATH, "//div[@class='App_App__15LM-']")
 button_yes_order = (By.XPATH, "//button[text()='Да']")
 order_is_processed = (By.XPATH, "//div[@class='Order_Text__2broi']")
-logo = (By.CLASS_NAME, 'Header_LogoScooter__3lsAR')
-logo_dzen = (By.CLASS_NAME,'Header_LogoYandex__3TSOI')

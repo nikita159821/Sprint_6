@@ -2,7 +2,7 @@ from pages.base_page import BasePage
 from tests.urls import URL
 from locators.order_page_locators import cookie, button_order, name_order, lastname_order, address_order, \
     metro_station_order, station, telephone_order, next_button_order, delivery_order, close_calendar_order, \
-    period_order, day_order, color_order, button, button_yes_order, order_is_processed, logo, logo_dzen
+    period_order, day_order, color_order, button, button_yes_order, order_is_processed
 
 
 class OrderPage(BasePage):
@@ -81,14 +81,6 @@ class OrderPage(BasePage):
     # Метод возвращает "Заказ успешно оформлен"
     def return_order_is_processed(self):
         return self.browser.find_element(*order_is_processed)
-
-    # Метод нажимает  на лого "Самокат"
-    def logo_click(self):
-        self.browser.find_element(*logo).click()
-
-    # Метод нажимает  на лого "Яндекс"
-    def logo_yandex_click(self):
-        self.browser.find_element(*logo_dzen).click()
 
     # Метод объединяет остальные в шаг
     def order(self, customer_name, lastname, address, telephone, delivery):
