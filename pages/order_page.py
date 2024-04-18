@@ -3,7 +3,7 @@ from tests.data import name, lastname, address, telephone, delivery
 from tests.urls import URL
 from locators.order_page_locators import cookie, button_order, name_order, lastname_order, address_order, \
     metro_station_order, station, telephone_order, next_button_order, delivery_order, close_calendar_order, \
-    period_order, day_order, color_order, button, button_yes_order, order_is_processed, logo
+    period_order, day_order, color_order, button, button_yes_order, order_is_processed, logo, logo_dzen
 
 
 class OrderPage(BasePage):
@@ -87,6 +87,10 @@ class OrderPage(BasePage):
     # Метод нажимает  на лого "Самокат"
     def logo_click(self):
         self.browser.find_element(*logo).click()
+
+    # Метод нажимает  на лого "Яндекс"
+    def logo_dzen_click(self):
+        self.browser.find_element(*logo_dzen).click()
 
     # Метод объединяет остальные в шаг
     def order(self):
