@@ -1,11 +1,15 @@
+import pytest
+
+from tests.data import order_data
 from tests.urls import URL, URL_DZEN
 
 
 class TestOrder:
 
-    def test_order_positive_top_button(self, order_page):
+    @pytest.mark.parametrize('name, lastname, address, telephone, delivery', order_data)
+    def test_order_positive_top_button(self, order_page, name, lastname, address, telephone, delivery):
         order_page.order_button()
-        order_page.order()
+        order_page.order(name, lastname, address, telephone, delivery)
         assert order_page.return_order_is_processed().is_displayed()
 
     def test_logo_redirects_to_home(self, order_page, browser):

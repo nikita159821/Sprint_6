@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from tests.data import name, lastname, address, telephone, delivery
+
 from tests.urls import URL
 from locators.order_page_locators import cookie, button_order, name_order, lastname_order, address_order, \
     metro_station_order, station, telephone_order, next_button_order, delivery_order, close_calendar_order, \
@@ -24,27 +24,27 @@ class OrderPage(BasePage):
         self.browser.find_element(*button_order).click()
 
     # Вводим имя
-    def name_order_send(self, ):
-        self.browser.find_element(*name_order).send_keys(name)
+    def name_order_send(self, name_text):
+        self.browser.find_element(*name_order).send_keys(name_text)
 
     # Вводим фамилию
-    def lastname_order_send(self, ):
+    def lastname_order_send(self, lastname):
         self.browser.find_element(*lastname_order).send_keys(lastname)
 
     # Вводим адрес
-    def address_order_send(self, ):
+    def address_order_send(self, address):
         self.browser.find_element(*address_order).send_keys(address)
 
     # Нажимаем на поле "Станция метро"
-    def metro_station_click(self, ):
+    def metro_station_click(self):
         self.browser.find_element(*metro_station_order).click()
 
     # Выбираем станцию "Бульвар Рокоссовского"
-    def station_click(self, ):
+    def station_click(self):
         self.browser.find_element(*station).click()
 
     # Вводим номер телефона
-    def telephone_order_send(self, ):
+    def telephone_order_send(self, telephone):
         self.browser.find_element(*telephone_order).send_keys(telephone)
 
     # Метод нажимает кнопку "Далее"
@@ -52,7 +52,7 @@ class OrderPage(BasePage):
         self.browser.find_element(*next_button_order).click()
 
     # Метод указывает дату когда привезти самокат
-    def delivery_order_send(self):
+    def delivery_order_send(self,delivery):
         self.browser.find_element(*delivery_order).send_keys(delivery)
 
     # Метод закрывает календарь
@@ -80,7 +80,6 @@ class OrderPage(BasePage):
         self.browser.find_element(*button_yes_order).click()
 
     # Метод возвращает "Заказ успешно оформлен"
-
     def return_order_is_processed(self):
         return self.browser.find_element(*order_is_processed)
 
@@ -93,18 +92,19 @@ class OrderPage(BasePage):
         self.browser.find_element(*logo_dzen).click()
 
     # Метод объединяет остальные в шаг
-    def order(self):
-        self.name_order_send()
-        self.lastname_order_send()
-        self.address_order_send()
+    def order(self, customer_name, lastname, address, telephone, delivery):
+        self.name_order_send(customer_name)
+        self.lastname_order_send(lastname)
+        self.address_order_send(address)
         self.metro_station_click()
         self.station_click()
-        self.telephone_order_send()
+        self.telephone_order_send(telephone)
         self.next_button_order_click()
-        self.delivery_order_send()
+        self.delivery_order_send(delivery)
         self.close_calendar_order_click()
         self.period_order_click()
         self.day_order_click()
         self.color_order_click()
         self.button_click()
         self.button_yes_order_click()
+
