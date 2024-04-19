@@ -27,11 +27,11 @@ class BasePage:
     def button_cookie(self):
         self.find_element(*cookie).click()
 
-    # Метод возвращает URL страницы
+    @allure.step('Получаем URL открытой страницы')
     def get_current_url(self):
         return self.browser.current_url
 
-    # Получаем список вопросов
+    @allure.step('Получаем список вопросов')
     def get_questions(self):
         return self.browser.find_elements(*question)
 
