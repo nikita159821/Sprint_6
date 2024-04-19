@@ -1,37 +1,18 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-
-
+from locators.yandex_samokat_page_locators import cookie, question, answer, logo_dzen, logo
 from pages.base_page import BasePage
-from tests.urls import URL
 
 
 class SamokatPage(BasePage):
-    cookie = (By.ID, 'rcc-confirm-button')
-    question = (By.CLASS_NAME, 'accordion__item')
-    answer = (By.CSS_SELECTOR, '.accordion__panel p')
-    logo = (By.CLASS_NAME, 'Header_LogoScooter__3lsAR')
-    logo_dzen = (By.CLASS_NAME, 'Header_LogoYandex__3TSOI')
-
     def __init__(self, browser):
         super().__init__(browser)
 
-    # Открываем главную страницу
-    def open(self):
-        self.browser.get(URL)
-
-    # Принимаем куки
-    def button_cookie(self):
-        self.browser.find_element(*self.cookie).click()
-
     # Получаем список вопросов
     def get_questions(self):
-        return self.browser.find_elements(*self.question)
+        return self.browser.find_elements(*question)
 
     # Получаем список ответов для конкретного вопроса
     def get_answers(self, question):
-        return question.find_elements(*self.answer)
+        return question.find_elements(*answer)
 
     # Находим и кликаем на вопрос по индексу
     def click_question_by_index(self, index):
@@ -49,12 +30,13 @@ class SamokatPage(BasePage):
             if answers:
                 return answers[0].text
 
-        # Метод нажимает  на лого "Самокат"
-    def logo_click(self):
-            self.browser.find_element(*self.logo).click()
+    # Метод нажимает  на лого "Самокат"
 
-        # Метод нажимает  на лого "Яндекс"
+    def logo_click(self):
+        self.find_element(*logo).click()
+
+    # Метод нажимает  на лого "Яндекс"
     def logo_yandex_click(self):
-            self.browser.find_element(*self.logo_dzen).click()
-    def time(self):
-        return WebDriverWait(self.browser, 30).until(expected_conditions.visibility_of_element_located(self.question))
+        self.find_element(*logo_dzen).click()
+
+
