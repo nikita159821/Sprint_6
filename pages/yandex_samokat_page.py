@@ -10,7 +10,7 @@ class SamokatPage(BasePage):
     def get_answers(self, question):
         return question.find_elements(*answer)
 
-    # Находим и кликаем на вопрос по индексу
+        # Находим и кликаем на вопрос по индексу
     def click_question_by_index(self, index):
         questions = self.get_questions()
         # Проверяем, не пустой ли список. А также, что индекс меньше длины списка.
