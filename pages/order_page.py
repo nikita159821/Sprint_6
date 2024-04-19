@@ -1,3 +1,5 @@
+import allure
+
 from pages.base_page import BasePage
 from locators.order_page_locators import button_order, name_order, lastname_order, address_order, \
     metro_station_order, station, telephone_order, next_button_order, delivery_order, close_calendar_order, \
@@ -9,67 +11,67 @@ class OrderPage(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
 
-    # Нажимаем кнопку "Заказать" в шапке
+    @ allure.step('Нажимаем кнопку "Заказать" в шапке')
     def order_button_click(self):
         self.find_element(*button_order).click()
 
-    # Нажимаем кнопку "Заказать" внизу страницы
+    @allure.step('Нажимаем кнопку "Заказать" внизу страницы')
     def order_bottom_button_click(self):
         self.find_element(*bottom_button).click()
 
-    # Вводим имя
+    @allure.step('Вводим имя')
     def name_order_send(self, name_text):
         self.find_element(*name_order).send_keys(name_text)
 
-    # Вводим фамилию
+    @allure.step('Вводим фамилию')
     def lastname_order_send(self, lastname):
         self.find_element(*lastname_order).send_keys(lastname)
 
-    # Вводим адрес
+    @allure.step('Вводим адрес')
     def address_order_send(self, address):
         self.find_element(*address_order).send_keys(address)
 
-    # Нажимаем на поле "Станция метро"
+    @allure.step('Нажимаем на поле "Станция метро')
     def metro_station_click(self):
         self.find_element(*metro_station_order).click()
 
-    # Выбираем станцию "Бульвар Рокоссовского"
+    @allure.step('Выбираем станцию "Бульвар Рокоссовского')
     def station_click(self):
         self.find_element(*station).click()
 
-    # Вводим номер телефона
+    @allure.step('Вводим номер телефона')
     def telephone_order_send(self, telephone):
         self.find_element(*telephone_order).send_keys(telephone)
 
-    # Метод нажимает кнопку "Далее"
+    @allure.step('Yажимаем кнопку "Далее"')
     def next_button_order_click(self):
         self.find_element(*next_button_order).click()
 
-    # Метод указывает дату когда привезти самокат
+    @allure.step('Указываем дату когда привезти самокат')
     def delivery_order_send(self,delivery):
         self.find_element(*delivery_order).send_keys(delivery)
 
-    # Метод закрывает календарь
+    @allure.step('Закрываем календарь')
     def close_calendar_order_click(self):
         self.find_element(*close_calendar_order).click()
 
-    # Метод нажимает на поле "Срок аренды"
+    @allure.step('Нажимаем на поле "Срок аренды"')
     def period_order_click(self):
         self.find_element(*period_order).click()
 
-    # Метод выбирает срок аренды "Сутки"
+    @allure.step('Выбираем срок аренды "Сутки"')
     def day_order_click(self):
         self.find_element(*day_order).click()
 
-    # Метот выбирает цвет самоката
+    @allure.step('Выбираем цвет самоката')
     def color_order_click(self):
         self.find_element(*color_order).click()
 
-    # Метод нажимает кнопку "Заказать" под формой
+    @allure.step('Нажимаем кнопку "Заказать" под формой')
     def button_click(self):
         self.find_element(*button).click()
 
-    # Метод нажимает "Да" в окне оформления заказ
+    @allure.step('Нажимаем кнопку "Да" в окне оформления заказ')
     def button_yes_order_click(self):
         self.find_element(*button_yes_order).click()
 
