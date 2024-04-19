@@ -12,6 +12,5 @@ class TestLogoRedirection:
     @allure.title('Проверка редиректа на страницу Яндекс дзен')
     def test_yandex_logo_redirects_to_zen(self, samokat, browser):
         samokat.logo_yandex_click()
-        all_windows = browser.window_handles
-        browser.switch_to.window(all_windows[1])
+        samokat.switch_to(1)
         assert samokat.get_current_url() == URL_DZEN

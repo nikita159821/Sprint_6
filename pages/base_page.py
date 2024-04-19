@@ -22,7 +22,7 @@ class BasePage:
     def open(self):
         self.browser.get(URL)
 
-    @allure.step('Нажимае принять куки')
+    @allure.step('Нажимаем принять куки')
     # Принимаем куки
     def button_cookie(self):
         self.find_element(*cookie).click()
@@ -34,3 +34,8 @@ class BasePage:
     # Получаем список вопросов
     def get_questions(self):
         return self.browser.find_elements(*question)
+
+    @allure.step('Переключаемся на вкладку')
+    def switch_to(self, window_index):
+        all_windows = self.browser.window_handles
+        self.browser.switch_to.window(all_windows[window_index])
