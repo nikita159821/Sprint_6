@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -17,9 +18,11 @@ class BasePage:
         WebDriverWait(self.browser, 5).until(expected_conditions.visibility_of_element_located(locator))
         return self.browser.find_element(*locator)
 
+    @allure.step('Открываем страницу')
     def open(self):
         self.browser.get(URL)
 
+    @allure.step('Нажимае принять куки')
     # Принимаем куки
     def button_cookie(self):
         self.find_element(*cookie).click()

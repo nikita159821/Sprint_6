@@ -11,7 +11,7 @@ class OrderPage(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
 
-    @ allure.step('Нажимаем кнопку "Заказать" в шапке')
+    @allure.step('Нажимаем кнопку "Заказать" в шапке')
     def order_button_click(self):
         self.find_element(*button_order).click()
 
