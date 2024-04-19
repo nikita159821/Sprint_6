@@ -2,6 +2,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.order_page_locators import cookie
+from locators.yandex_samokat_page_locators import question
 from tests.urls import URL
 
 
@@ -26,3 +27,7 @@ class BasePage:
     # Метод возвращает URL страницы
     def get_current_url(self):
         return self.browser.current_url
+
+    # Получаем список вопросов
+    def get_questions(self):
+        return self.browser.find_elements(*question)

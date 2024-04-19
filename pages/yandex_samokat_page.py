@@ -6,10 +6,6 @@ class SamokatPage(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
 
-    # Получаем список вопросов
-    def get_questions(self):
-        return self.browser.find_elements(*question)
-
     # Получаем список ответов для конкретного вопроса
     def get_answers(self, question):
         return question.find_elements(*answer)
@@ -17,26 +13,23 @@ class SamokatPage(BasePage):
     # Находим и кликаем на вопрос по индексу
     def click_question_by_index(self, index):
         questions = self.get_questions()
-        # Проверяем, не пустой ли список. А также, что индекс меньше длинны списка.
+        # Проверяем, не пустой ли список. А также, что индекс меньше длины списка.
         if questions and index < len(questions):
             questions[index].click()
 
     # Получаем текст ответа на вопрос по индексу
     def get_text_of_answer_by_index(self, index):
         questions = self.get_questions()
-        # Проверяем, не пустой ли список. А также, что индекс меньше длинны списка.
+        # Проверяем, не пустой ли список. А также, что индекс меньше длины списка.
         if questions and index < len(questions):
             answers = self.get_answers(questions[index])
             if answers:
                 return answers[0].text
 
-    # Метод нажимает  на лого "Самокат"
-
+    # Метод нажимает на логотип "Самокат"
     def logo_click(self):
         self.find_element(*logo).click()
 
-    # Метод нажимает  на лого "Яндекс"
+    # Метод нажимает на логотип "Яндекс"
     def logo_yandex_click(self):
         self.find_element(*logo_dzen).click()
-
-
